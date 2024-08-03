@@ -1,37 +1,37 @@
-class VeiculoModel {
-  final int TipoVeiculo;
-  final String Valor;
-  final String Marca;
-  final String Modelo;
-  final int AnoModelo;
-  final String Combustivel;
-  final String CodigoFipe;
-  final String MesReferencia;
-  final String SiglaCombustivel;
+class Veiculo {
+  final String tipoVeiculo;
+  final String valor;
+  final String marca;
+  final String modelo;
+  final int anoModelo;
+  final String combustivel;
+  final String codigoFipe;
+  final String mesReferencia;
+  final String siglaCombustivel;
 
-  VeiculoModel({
-    required this.TipoVeiculo,
-    required this.Valor,
-    required this.Marca,
-    required this.Modelo,
-    required this.AnoModelo,
-    required this.Combustivel,
-    required this.CodigoFipe,
-    required this.MesReferencia,
-    required this.SiglaCombustivel,
+  Veiculo({
+    required this.tipoVeiculo,
+    required this.valor,
+    required this.marca,
+    required this.modelo,
+    required this.anoModelo,
+    required this.combustivel,
+    required this.codigoFipe,
+    required this.mesReferencia,
+    required this.siglaCombustivel,
   });
 
-  factory VeiculoModel.fromMap(Map<String, dynamic> map) {
-    return VeiculoModel(
-      TipoVeiculo: map['TipoVeiculo'],
-      Valor: map['Valor']?? '',
-      Marca: map['Marca']?? '',
-      Modelo: map['Modelo']?? '',
-      AnoModelo: map['AnoModelo'],
-      Combustivel: map['Combustivel']?? '',
-      CodigoFipe: map['CodigoFipe']?? '',
-      MesReferencia: map['MesReferencia']?? '',
-      SiglaCombustivel: map['SiglaCombustivel']?? '',
+  factory Veiculo.fromJson(Map<String, dynamic> json) {
+    return Veiculo(
+      tipoVeiculo: json['TipoVeiculo'].toString(),
+      valor: json['Valor'],
+      marca: json['Marca'],
+      modelo: json['Modelo'],
+      anoModelo: json['AnoModelo'],
+      combustivel: json['Combustivel'],
+      codigoFipe: json['CodigoFipe'],
+      mesReferencia: json['MesReferencia'],
+      siglaCombustivel: json['SiglaCombustivel'],
     );
   }
 }
